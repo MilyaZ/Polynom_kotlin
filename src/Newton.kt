@@ -5,9 +5,7 @@ class Newton():Polynom(){
     var pol = Polynom(doubleArrayOf(1.0))
     init{
         xfx = mutableMapOf()
-        map = mutableMapOf()//возможно надо по другому создавать
-        //надо менять 8
-
+        map = mutableMapOf()
     }
     constructor(xfx:MutableMap<Double,Double>):this(){
         this.xfx = xfx
@@ -25,8 +23,6 @@ class Newton():Polynom(){
     private fun difference(key: Pair<Int, Int>) : Double{
         if (!map.containsKey(key)){
             var y1 :Double
-            /*if(key.first==key.second){y1=xfx.values.elementAt(key.first)}
-            else{*/
             if(Math.abs(key.first-key.second)==1){
                 y1= (xfx.values.elementAt(key.second)-xfx.values.elementAt(key.first))/
                             (xfx.keys.elementAt(key.second)-xfx.keys.elementAt(key.first))
@@ -54,9 +50,6 @@ class Newton():Polynom(){
             if (r != null) this += pol * r
         }else this+=Polynom(doubleArrayOf(xfx.values.elementAt(s)))
     }
-    
-//у меня не красивый код (
-
 }
 
 
